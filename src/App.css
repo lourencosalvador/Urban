@@ -566,13 +566,18 @@ video {
 
 html, body{
   font-family: sans-serif;
-  background: #c6d5c6;
+ 
+  background: #eee;
 }
 
 .nav{
   position: fixed;
-  width: 100%;
+width: 100%;
+
+padding-left: 40px;
+padding-right: 40px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -580,22 +585,70 @@ html, body{
   display: flex;
 }
 
+.logo{
+  position: relative;
+  font-family: cursive;
+  font-weight: 600;
+}
+.bola{
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: 10px;
+  height: 10px;
+  background: #0f0f0f;
+  border-radius: 50%;
+}
 .logo, .nav-item {
   margin: 2rem;
-  font-weight: 400;
-  font-size: 1.5vw;
+  font-weight: 600;
+  font-size: 1.4vw;
+}
+.nav-item{
+  color: #9ca3af;
 }
 
-h1{
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 10vw;
-  line-height: 1;
+.nav-item {
+  position: relative;
+  color: #0f0f0f;
 }
+.nav-item.active::before,
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: #0f0f0f;
+  border-radius: 50px;
+  transition: width 0.3s; 
+}
+
+.nav-item::before,
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #0f0f0f;
+  border-radius: 50px;
+  transition: width 0.3s; 
+}
+
+.nav-item::before {
+  top: -5px;
+  left: 15px;
+}
+
+.nav-item::after {
+  top: 30px;
+  left: 15px;
+}
+
+.nav-item:hover::before,
+.nav-item:hover::after {
+  width: 20px;
+}
+
 
 a{
   text-decoration: none;
@@ -620,4 +673,80 @@ a{
   height: 100vh;
   background: #0f0f0f;
   transform-origin: top;
+}
+
+input{
+  background: transparent;
+}
+
+.btns{
+width: auto;
+  height: 50px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button{
+  padding: 5px 13px 5px;
+  background: #0f0f0f;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+.btnLogin{
+  padding: 8px 15px 8px;
+  background: #eee;
+  border-radius: 5px;
+  color: #0f0f0f;
+}
+#home{
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: red;
+  border-radius: 35px;
+  background: 
+  linear-gradient(
+    to right,
+    rgb(0 0 0 / 0.6),
+    rgb(0 0 0 / 0)
+  ), 
+  url('../public/pexels-expect-best-323780.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+}
+.conteudo {
+  width: 100%;
+  padding-left: 50px;
+  padding-top: 40px;
+  margin-bottom: 100px;
+}
+
+.conteudo h1{
+  color: #fff;
+  font-family: 800;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.conteudo p{
+  color: #9ca3af;
+  font-size: 27px;
+}
+
+.sales{
+  width: 92%;
+   margin-left: 50px;
+  height: 170px;
+  background: #eee;
+  border-radius: 18px;
 }

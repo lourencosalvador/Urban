@@ -1,6 +1,6 @@
 import React from "react"
 import transition from "../transition"
-import "../index.css"
+
 
 const Contact = () => {
   
